@@ -3,7 +3,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "server1" do |server1|
     server1.vm.box = "centos/7"
-    server1.vm.network "private_network", ip: "192.168.56.6"
+    server1.vm.network "private_network", ip: "192.168.121.6"
     server1.vm.hostname = "server1.example.com"
     server1.hostsupdater.aliases = ["server1", "server1.example.com"]
 
@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
           ansible.playbook  = "playbook.yml"
 
         end
-#        server1.vm.provider "libvirt" do |v|
-#          v.memory = 1024
-#          v.cpus = 1
-#        end
+       server1.vm.provider "libvirt" do |v|
+         v.memory = 1024
+          v.cpus = 1
+       end
   end
 end

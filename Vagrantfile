@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
           ansible.playbook  = "playbook.yml"
 
         end
-        server1.vm.provider "virtualbox" do |v|
-          v.memory = 1024
-          v.cpus = 1
-        end
+#        server1.vm.provider "libvirt" do |v|
+#          v.memory = 1024
+#          v.cpus = 1
+#        end
   end
 end

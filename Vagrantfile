@@ -4,7 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 cluster = {
-  #"master" => { :ip => "192.168.121.10", :cpus => 1, :mem => 512, :boxname => "ubuntu/xenial64", :provider => "libvirt" },
+  "master" => { :ip => "192.168.121.10", :cpus => 1, :mem => 512, :boxname => "centos/7", :provider => "libvirt", :playbook => "provisioners/playbook.yml", :script => "provisioners/install.sh" },
   "slave" => { :ip => "192.168.121.11", :cpus => 1, :mem => 512, :boxname => "centos/7", :provider => "libvirt", :playbook => "provisioners/playbook.yml", :script => "provisioners/install.sh" }
 }
  
@@ -27,7 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       cfg.vm.provision "ansible" do |ansible|
         ansible.playbook  = "#{info[:playbook]}"
       end # end Ansible provisioner
-      #cfg.vm.provision "file", source: "~/.ssh/id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
       cfg.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/mykeys"
       cfg.vm.provision :shell, :inline =>"
          echo 'Copying public SSH Keys to the VM'

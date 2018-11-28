@@ -1,0 +1,9 @@
+---
+- name: Ansible provisioning
+  hosts: all
+  become: yes
+  tasks:
+    - name: hello world
+      debug: 
+        msg: "hello world"
+...

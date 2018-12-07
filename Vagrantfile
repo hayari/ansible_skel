@@ -25,6 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       
       unless info[:ip].nil?
         cfg.vm.network "private_network", ip: "#{info[:ip]}" 
+      else
+        cfg.vm.network "private_network", type: "dhcp"
       end 
       unless info[:forwarded_port_host].nil? || info[:forwarded_port_guest].nil?
         cfg.vm.network "forwarded_port", guest: "#{info[:forwarded_port_guest]}", host: "#{info[:forwarded_port_host]}"

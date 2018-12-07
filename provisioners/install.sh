@@ -1,5 +1,5 @@
 sudo yum  update -y
-sudo yum install cockpit
+sudo yum install cockpit -y
 sudo systemctl enable --now cockpit.socket
 sudo firewall-cmd --permanent --zone=public --add-service=cockpit
 sudo firewall-cmd --reload

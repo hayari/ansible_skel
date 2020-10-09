@@ -4,23 +4,33 @@
 VAGRANTFILE_API_VERSION = "2"
 
 cluster = {
-  #"master" => { :ip => "192.168.121.10", :cpus => 1, :mem => 512, :boxname => "centos/7", :provider => "libvirt", :playbook => "provisioners/playbook.yml", :script => "provisioners/install.sh" },
-  "slave" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "libvirt", :forwarded_port_host => "8080", :forwarded_port_guest => "80", :script => "provisioners/install.sh", :rsync => false }
+  "controller" => { :ip => "192.168.121.10", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false  },
+  "ansible1" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+  "ansible2" => {  :ip => "192.168.121.12", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+  "ansible3" => {  :ip => "192.168.121.13", :cpus => 1, :mem => 1024, :boxname => "ubuntu/bionic64", :provider => "virtualbox", :script => "provisioners/install_ubuntu.sh", :playbook => "provisioners/playbook.yml", :rsync => false }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   cluster.each_with_index do |(hostname, info), index|
-
+    config.hostmanager.enabled = false
+    #config.hostmanager.manage_host = false
+    #config.hostmanager.manage_guest = true
+    #config.hostmanager.ignore_private_ip = false
+    #config.hostmanager.include_offline = true
+    
     config.vm.define hostname do |cfg|
       
       cfg.vm.hostname = hostname
       cfg.hostsupdater.aliases = [hostname]
       cfg.vm.box = "#{info[:boxname]}" || 'virtualbox'
-
+      #cfg.hostmanager.aliases = %w(example-box.localdomain example-box-alias)
       cfg.vm.provider :"#{info[:provider]}" do |prov|
         prov.memory = info[:mem] || '512'
         prov.cpus = info[:cpus] || '1'
+        prov.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        prov.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+        prov.customize ["modifyvm", :id, "--ioapic", "on"]
       end # end provider
       
       unless info[:ip].nil?
@@ -50,8 +60,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end # end Ansible provisioner
 
       cfg.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/mykeys"
+      #cfg.vm.provision "file", source: "sshd_config", destination: "/home/vagrant/sshd_config" 
+      #cfg.vm.provision "file", source: "ansible.sudo", destination: "/etc/sudoers.d/ansible"
       cfg.vm.provision :shell, :inline =>"
-         echo 'Copying public SSH Keys to the VM'
+         echo 'Copying public SSH Keys to the vagrant user '
          chmod 700 /home/vagrant/.ssh
          cat /home/vagrant/.ssh/mykeys >> /home/vagrant/.ssh/authorized_keys
          chmod -R 600 /home/vagrant/.ssh/authorized_keys
@@ -59,9 +71,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          echo 'StrictHostKeyChecking no' >> /home/vagrant/.ssh/config
          echo 'UserKnownHostsFile /dev/null' >> /home/vagrant/.ssh/config
          chmod -R 600 /home/vagrant/.ssh/config
+
          ", privileged: false
-
+    
     end # end config
-
+  config.vm.provision :hostmanager
   end # end cluster
 end

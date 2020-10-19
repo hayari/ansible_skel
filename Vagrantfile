@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       cfg.vm.hostname = hostname
       cfg.hostsupdater.aliases = [hostname]
       cfg.vm.box = "#{info[:boxname]}" || 'virtualbox'
-      #cfg.hostmanager.aliases = %w(example-box.localdomain example-box-alias)
+      cfg.hostmanager.aliases = [hostname+ ".example.com",hostname+ ".web.com"]
       cfg.vm.provider :"#{info[:provider]}" do |prov|
         prov.memory = info[:mem] || '512'
         prov.cpus = info[:cpus] || '1'

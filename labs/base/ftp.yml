@@ -1,0 +1,21 @@
+---
+- name: install a service on centos hosts
+  hosts: centos
+  vars:
+    package_names: [vsftpd]
+    service_names: [firewalld,vsftpd]
+    firewall_services: [ftp]
+    file_name: README
+    remote_dest: /var/ftp/pub
+  tasks:
+  - name: install all needed packages
+    yum: name="{{package_names}}" state=latest
+  - name: enable start all needed services
+    service: name="{{item}}" enabled=yes state=restarted
+    with_items: "{{service_names}}"
+  - name: open port for all service traffic
+    firewalld: service="{{item}}" permanent=yes state=enabled immediate=yes
+    with_items: "{{firewall_services}}"
+  - name: copy file to remote dest
+    copy: src="{{file_name}}" dest="{{remote_dest}}" mode=0444 force=no
+...

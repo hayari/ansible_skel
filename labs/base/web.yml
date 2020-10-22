@@ -1,0 +1,60 @@
+---
+- name: install a service on centos hosts
+  hosts: centos
+  vars:
+    # package_names: [firewalld,httpd]
+    # service_names: [firewalld,httpd]
+    # firewall_services: [http,https]
+    # content_txt: "Welcome to the Ansible managed web service"
+    # remote_dest: /var/www/html/index.html
+  vars_files:
+    - "{{ansible_distribution}}.yml"
+  tasks:
+
+  - name: install all needed packages
+    package: name="{{package_names}}" state=latest
+
+  - name: enable start all needed services
+    service: name="{{item}}" enabled=yes state=restarted
+    with_items: "{{service_names}}"
+
+  - name: open all service traffic on CentOS
+    firewalld: service="{{item}}" permanent=yes state=enabled immediate=yes
+    with_items: "{{firewall_services}}"
+    when: ansible_distribution=="CentOS"
+
+  - name: open port for  traffic on CentOS
+    firewalld: port="{{item}}" permanent=yes state=enabled immediate=yes
+    with_items: "{{firewall_ports}}"
+    when: ansible_distribution=="CentOS"
+
+
+
+  - name: open port for all service traffic on Ubuntu
+    ufw: name="{{item}}" rule=allow
+    with_items: "{{firewall_services}}"
+    when: ansible_distribution=="Ubuntu"   
+  
+  - name: remove old index.html
+    file: path="{{remote_dest}}" state=absent
+
+  - name: create vhost directory
+    file: path="{{web_base_dir}}/{{ansible_fqdn}}.example.com"  state=directory owner=apache  group=apache mode='0755'
+
+  - name: copy file to remote dest
+    copy: content="{{content_txt}}" dest="{{web_base_dir}}/{{ansible_fqdn}}.example.com/index.html" mode=0755 force=yes
+
+  - name: create virtualhost config
+    template: src=vhost.j2 dest="{{vhost_file_dest}}/{{ansible_fqdn}}.example.com.conf"
+    notify: 
+      - Restart Services
+
+  
+  handlers:
+    - name: Restart Services
+      service: name="{{item}}" enabled=yes state=restarted
+      with_items: "{{service_names}}"
+    - name: verify web url
+      uri: url="http://{{ansible_fqdn}}.example.com" status_code=200
+
+...

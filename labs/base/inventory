@@ -1,0 +1,6 @@
+[centos]
+controller
+ansible1
+ansible2
+[ubuntu]
+ansible3

@@ -5,9 +5,10 @@ VAGRANTFILE_API_VERSION = "2"
 
 cluster = {
   "controller" => { :ip => "192.168.121.10", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false  },
-  "ansible1" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
-  "ansible2" => {  :ip => "192.168.121.12", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
-  "ansible3" => {  :ip => "192.168.121.13", :cpus => 1, :mem => 1024, :boxname => "ubuntu/bionic64", :provider => "virtualbox", :script => "provisioners/install_ubuntu.sh", :playbook => "provisioners/playbook.yml", :rsync => false }
+  "centos1" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+#  "centos2" => {  :ip => "192.168.121.12", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+  "ubuntu" => {  :ip => "192.168.121.13", :cpus => 1, :mem => 1024, :boxname => "ubuntu/bionic64", :provider => "virtualbox", :script => "provisioners/install_ubuntu.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+  "win" => {  :ip => "192.168.121.14", :cpus => 1, :mem => 2048, :boxname => "opentable/win-2012r2-standard-amd64-nocm", :provider => "virtualbox", :script => "provisioners/install_windows.bat", :rsync => false, :forwarded_port_host => "13389", :forwarded_port_guest => "3389", :playbook => "provisioners/playbook_win.yml" }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -59,20 +60,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end 
       end # end Ansible provisioner
 
-      cfg.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/mykeys"
+      #cfg.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/mykeys"
       #cfg.vm.provision "file", source: "sshd_config", destination: "/home/vagrant/sshd_config" 
       #cfg.vm.provision "file", source: "ansible.sudo", destination: "/etc/sudoers.d/ansible"
-      cfg.vm.provision :shell, :inline =>"
-         echo 'Copying public SSH Keys to the vagrant user '
-         chmod 700 /home/vagrant/.ssh
-         cat /home/vagrant/.ssh/mykeys >> /home/vagrant/.ssh/authorized_keys
-         chmod -R 600 /home/vagrant/.ssh/authorized_keys
-         echo 'Host 192.168.*.*' >> /home/vagrant/.ssh/config
-         echo 'StrictHostKeyChecking no' >> /home/vagrant/.ssh/config
-         echo 'UserKnownHostsFile /dev/null' >> /home/vagrant/.ssh/config
-         chmod -R 600 /home/vagrant/.ssh/config
+      #cfg.vm.provision :shell, :inline =>"
+      #   echo 'Copying public SSH Keys to the vagrant user '
+      #   chmod 700 /home/vagrant/.ssh
+      #   cat /home/vagrant/.ssh/mykeys >> /home/vagrant/.ssh/authorized_keys
+      #   chmod -R 600 /home/vagrant/.ssh/authorized_keys
+      #   echo 'Host 192.168.*.*' >> /home/vagrant/.ssh/config
+      #   echo 'StrictHostKeyChecking no' >> /home/vagrant/.ssh/config
+      #   echo 'UserKnownHostsFile /dev/null' >> /home/vagrant/.ssh/config
+      #   chmod -R 600 /home/vagrant/.ssh/config
 
-         ", privileged: false
+      #   ", privileged: false
     
     end # end config
   config.vm.provision :hostmanager

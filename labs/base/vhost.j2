@@ -1,0 +1,8 @@
+Listen  *:8080
+NameVirtualHost {{ansible_fqdn}}.example.com
+
+<VirtualHost *:8080>
+	ServerName {{ansible_fqdn}}.example.com
+ 	DocumentRoot {{web_base_dir}}/{{ansible_fqdn}}.example.com
+        ServerAdmin anna@example.com
+</VirtualHost>

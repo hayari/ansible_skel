@@ -1,0 +1,21 @@
+---
+- name: prepare ansible environement
+  hosts: all
+  vars:
+    ansible_winrm_server_cert_validation: ignore
+    ansible_port: 55985
+    ansible_winrm_scheme: http
+  tasks:
+    - name: create ansible user
+      win_user: 
+        name: ansible 
+        password: P@ssw0rd 
+        password_expired: no
+        groups: 
+          - Administrators
+          - Users
+        account_disabled: no
+        account_locked: no
+        state: present
+        user_cannot_change_password: yes
+

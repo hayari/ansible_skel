@@ -1,0 +1,8 @@
+package_names: [ufw,apache2]
+service_names: [ufw,apache2]
+firewall_services: [Apache]
+content_txt: "Welcome to the Ansible managed web service with vhosts\n"
+remote_dest: /var/www/html/index.html
+web_base_dir: /var/www/
+vhost_file_dest: /etc/httpd/conf.d
+

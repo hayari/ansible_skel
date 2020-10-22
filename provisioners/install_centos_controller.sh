@@ -6,7 +6,7 @@ sudo yum  update -y
 sudo yum install -y epel-release
 sudo yum  update -y
 #sudo yum groupinstall 'development tools' -y
-#sudo yum install -y python python-pip python-devel gcc openssl-devel bzip2-devel
+sudo yum install -y python python-pip python-devel gcc openssl-devel bzip2-devel
 
 pip install --upgrade pip
 sudo yum install -y ansible
@@ -26,7 +26,7 @@ sudo pip3 install pywinrm
 #sudo foreman-installer -v
 
 # install Ansible AWX (Tower Upstream)
-sudo yum install -y python3
+sudo yum install -y python3 python3-pip
 sudo yum install gcc openssl-devel bzip2-devel libffi-devel -y
 sudo yum install -y git make yum-utils curl
 sudo yum-config-manager \
@@ -48,7 +48,8 @@ curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.r
 sudo yum install -y yarn
 sudo npm install npm@latest -g
 sudo yum install -y libselinux-python3
-sudo pip install -U requests==2.5.3
+sudo pip install -U requests
+rm -rf awx
 git clone --branch execution-environments https://github.com/ansible/awx.git 
 cd awx/installer/
 ansible-playbook -i inventory install.yml

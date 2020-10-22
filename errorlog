@@ -1,45 +1,1563 @@
-2018-11-28 22:15:56,386 p=11470 u=hichem |  PLAY [Ansible provisioning] ****************************************************
-2018-11-28 22:15:56,598 p=11470 u=hichem |  TASK [Gathering Facts] *********************************************************
-2018-11-28 22:15:58,670 p=11470 u=hichem |  ok: [slave]
-2018-11-28 22:15:58,704 p=11470 u=hichem |  TASK [hello world] *************************************************************
-2018-11-28 22:15:58,760 p=11470 u=hichem |  ok: [slave] => {
-    "msg": "hello world"
-}
-2018-11-28 22:15:58,762 p=11470 u=hichem |  PLAY RECAP *********************************************************************
-2018-11-28 22:15:58,762 p=11470 u=hichem |  slave                      : ok=2    changed=0    unreachable=0    failed=0   
-2018-11-28 22:20:25,202 p=12186 u=hichem |  PLAY [Ansible provisioning] ****************************************************
-2018-11-28 22:20:25,268 p=12186 u=hichem |  TASK [Gathering Facts] *********************************************************
-2018-11-28 22:20:26,973 p=12186 u=hichem |  ok: [slave]
-2018-11-28 22:20:26,989 p=12186 u=hichem |  TASK [hello world] *************************************************************
-2018-11-28 22:20:27,040 p=12186 u=hichem |  ok: [slave] => {
-    "msg": "hello world"
-}
-2018-11-28 22:20:27,043 p=12186 u=hichem |  PLAY RECAP *********************************************************************
-2018-11-28 22:20:27,044 p=12186 u=hichem |  slave                      : ok=2    changed=0    unreachable=0    failed=0   
-2018-11-28 22:23:22,506 p=12894 u=hichem |  PLAY [Ansible provisioning] ****************************************************
-2018-11-28 22:23:22,520 p=12894 u=hichem |  TASK [Gathering Facts] *********************************************************
-2018-11-28 22:23:24,248 p=12894 u=hichem |  ok: [slave]
-2018-11-28 22:23:24,272 p=12894 u=hichem |  TASK [hello world] *************************************************************
-2018-11-28 22:23:24,322 p=12894 u=hichem |  ok: [slave] => {
-    "msg": "hello world"
-}
-2018-11-28 22:23:24,325 p=12894 u=hichem |  PLAY RECAP *********************************************************************
-2018-11-28 22:23:24,325 p=12894 u=hichem |  slave                      : ok=2    changed=0    unreachable=0    failed=0   
-2018-11-28 22:27:15,582 p=13573 u=hichem |  PLAY [Ansible provisioning] ****************************************************
-2018-11-28 22:27:15,596 p=13573 u=hichem |  TASK [Gathering Facts] *********************************************************
-2018-11-28 22:27:17,254 p=13573 u=hichem |  ok: [slave]
-2018-11-28 22:27:17,270 p=13573 u=hichem |  TASK [hello world] *************************************************************
-2018-11-28 22:27:17,318 p=13573 u=hichem |  ok: [slave] => {
-    "msg": "hello world"
-}
-2018-11-28 22:27:17,321 p=13573 u=hichem |  PLAY RECAP *********************************************************************
-2018-11-28 22:27:17,322 p=13573 u=hichem |  slave                      : ok=2    changed=0    unreachable=0    failed=0   
-2018-12-03 15:32:36,106 p=16472 u=hichem |  PLAY [Ansible provisioning] ****************************************************
-2018-12-03 15:32:36,118 p=16472 u=hichem |  TASK [Gathering Facts] *********************************************************
-2018-12-03 15:32:37,541 p=16472 u=hichem |  ok: [slave]
-2018-12-03 15:32:37,559 p=16472 u=hichem |  TASK [hello world] *************************************************************
-2018-12-03 15:32:37,579 p=16472 u=hichem |  ok: [slave] => {
-    "msg": "hello world"
-}
-2018-12-03 15:32:37,580 p=16472 u=hichem |  PLAY RECAP *********************************************************************
-2018-12-03 15:32:37,580 p=16472 u=hichem |  slave                      : ok=2    changed=0    unreachable=0    failed=0   
+2020-10-09 16:47:07,189 p=14629 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-09 16:47:07,199 p=14629 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-09 16:47:08,252 p=14629 u=hichem n=ansible | ok: [controller]
+2020-10-09 16:47:08,260 p=14629 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-09 16:47:08,583 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:08,588 p=14629 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-09 16:47:08,801 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:08,805 p=14629 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-09 16:47:09,028 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:09,034 p=14629 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-09 16:47:09,665 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:09,671 p=14629 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-09 16:47:10,029 p=14629 u=hichem n=ansible | ok: [controller]
+2020-10-09 16:47:10,039 p=14629 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-09 16:47:10,296 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:10,301 p=14629 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-09 16:47:10,877 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:10,882 p=14629 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-09 16:47:11,630 p=14629 u=hichem n=ansible | changed: [controller]
+2020-10-09 16:47:11,641 p=14629 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-09 16:47:11,642 p=14629 u=hichem n=ansible | controller                 : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-09 16:49:36,205 p=16687 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-09 16:49:36,214 p=16687 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-09 16:49:37,337 p=16687 u=hichem n=ansible | ok: [ansible1]
+2020-10-09 16:49:37,346 p=16687 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-09 16:49:37,729 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:37,734 p=16687 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-09 16:49:37,982 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:37,988 p=16687 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-09 16:49:38,240 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:38,250 p=16687 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-09 16:49:38,890 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:38,895 p=16687 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-09 16:49:39,300 p=16687 u=hichem n=ansible | ok: [ansible1]
+2020-10-09 16:49:39,305 p=16687 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-09 16:49:39,562 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:39,568 p=16687 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-09 16:49:40,134 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:40,138 p=16687 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-09 16:49:40,761 p=16687 u=hichem n=ansible | changed: [ansible1]
+2020-10-09 16:49:40,770 p=16687 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-09 16:49:40,770 p=16687 u=hichem n=ansible | ansible1                   : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-09 16:52:37,137 p=18771 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-09 16:52:37,354 p=18771 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-09 16:52:38,676 p=18771 u=hichem n=ansible | ok: [ansible2]
+2020-10-09 16:52:38,686 p=18771 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-09 16:52:39,064 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:39,069 p=18771 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-09 16:52:39,340 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:39,347 p=18771 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-09 16:52:39,627 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:39,633 p=18771 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-09 16:52:40,378 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:40,383 p=18771 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-09 16:52:40,717 p=18771 u=hichem n=ansible | ok: [ansible2]
+2020-10-09 16:52:40,722 p=18771 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-09 16:52:40,950 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:40,955 p=18771 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-09 16:52:41,608 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:41,623 p=18771 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-09 16:52:42,255 p=18771 u=hichem n=ansible | changed: [ansible2]
+2020-10-09 16:52:42,264 p=18771 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-09 16:52:42,264 p=18771 u=hichem n=ansible | ansible2                   : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-09 16:54:44,654 p=23567 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-09 16:54:45,003 p=23567 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-09 16:54:47,430 p=23567 u=hichem n=ansible | ok: [ansible3]
+2020-10-09 16:54:47,442 p=23567 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-09 16:54:47,818 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:47,824 p=23567 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-09 16:54:48,069 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:48,076 p=23567 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-09 16:54:48,346 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:48,360 p=23567 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-09 16:54:49,160 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:49,165 p=23567 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-09 16:54:49,550 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:49,559 p=23567 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-09 16:54:49,887 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:49,896 p=23567 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-09 16:54:50,639 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:50,654 p=23567 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-09 16:54:51,265 p=23567 u=hichem n=ansible | changed: [ansible3]
+2020-10-09 16:54:51,276 p=23567 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-09 16:54:51,276 p=23567 u=hichem n=ansible | ansible3                   : ok=9    changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-16 12:11:03,473 p=19379 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-16 12:11:03,643 p=19379 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-16 12:11:07,768 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:07,782 p=19379 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-16 12:11:08,329 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:08,341 p=19379 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-16 12:11:08,678 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:08,692 p=19379 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-16 12:11:09,150 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:09,163 p=19379 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-16 12:11:10,480 p=19379 u=hichem n=ansible | changed: [controller]
+2020-10-16 12:11:10,487 p=19379 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-16 12:11:11,008 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:11,015 p=19379 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-16 12:11:11,329 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:11,336 p=19379 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-16 12:11:12,347 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:12,370 p=19379 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-16 12:11:13,435 p=19379 u=hichem n=ansible | ok: [controller]
+2020-10-16 12:11:13,450 p=19379 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-16 12:11:13,450 p=19379 u=hichem n=ansible | controller                 : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-16 12:12:11,282 p=21155 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-16 12:12:11,293 p=21155 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-16 12:12:15,219 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:15,229 p=21155 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-16 12:12:15,581 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:15,586 p=21155 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-16 12:12:15,839 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:15,850 p=21155 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-16 12:12:16,109 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:16,115 p=21155 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-16 12:12:16,846 p=21155 u=hichem n=ansible | changed: [ansible1]
+2020-10-16 12:12:16,852 p=21155 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-16 12:12:17,248 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:17,254 p=21155 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-16 12:12:17,527 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:17,533 p=21155 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-16 12:12:18,204 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:18,211 p=21155 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-16 12:12:18,972 p=21155 u=hichem n=ansible | ok: [ansible1]
+2020-10-16 12:12:18,985 p=21155 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-16 12:12:18,985 p=21155 u=hichem n=ansible | ansible1                   : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-16 12:13:29,170 p=22954 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-16 12:13:29,179 p=22954 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-16 12:13:32,864 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:32,872 p=22954 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-16 12:13:33,174 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:33,178 p=22954 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-16 12:13:33,390 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:33,395 p=22954 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-16 12:13:33,604 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:33,608 p=22954 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-16 12:13:34,197 p=22954 u=hichem n=ansible | changed: [ansible2]
+2020-10-16 12:13:34,201 p=22954 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-16 12:13:34,533 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:34,538 p=22954 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-16 12:13:34,751 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:34,755 p=22954 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-16 12:13:35,252 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:35,257 p=22954 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-16 12:13:35,862 p=22954 u=hichem n=ansible | ok: [ansible2]
+2020-10-16 12:13:35,871 p=22954 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-16 12:13:35,871 p=22954 u=hichem n=ansible | ansible2                   : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-16 12:14:28,508 p=25442 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-16 12:14:28,517 p=25442 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-16 12:14:35,851 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:35,863 p=25442 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-16 12:14:36,430 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:36,436 p=25442 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-16 12:14:36,821 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:36,828 p=25442 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-16 12:14:37,230 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:37,238 p=25442 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-16 12:14:38,280 p=25442 u=hichem n=ansible | changed: [ansible3]
+2020-10-16 12:14:38,287 p=25442 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-16 12:14:38,851 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:38,860 p=25442 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-16 12:14:39,290 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:39,297 p=25442 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-16 12:14:39,905 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:39,913 p=25442 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-16 12:14:40,600 p=25442 u=hichem n=ansible | ok: [ansible3]
+2020-10-16 12:14:40,610 p=25442 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-16 12:14:40,610 p=25442 u=hichem n=ansible | ansible3                   : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-19 13:13:48,178 p=30071 u=hichem n=ansible | [WARNING]: module include-vars not found in: /home/hichem/.ansible/plugins/modu
+les:/usr/share/ansible/plugins/modules:/home/hichem/anaconda3/lib/python3.7/sit
+e-packages/ansible/modules
+
+2020-10-19 13:14:16,980 p=30082 u=hichem n=ansible | [WARNING]: vars include-vars not found in: /home/hichem/.ansible/plugins/vars:/
+usr/share/ansible/plugins/vars:/home/hichem/anaconda3/lib/python3.7/site-
+packages/ansible/plugins/vars
+
+2020-10-19 13:30:23,904 p=30314 u=hichem n=ansible | [WARNING]: module firewall not found in: /home/hichem/.ansible/plugins/modules:
+/usr/share/ansible/plugins/modules:/home/hichem/anaconda3/lib/python3.7/site-
+packages/ansible/modules
+
+2020-10-19 13:30:28,710 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2022-06-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,711 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2021-12-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,717 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from ansible.netcommon in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,726 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from arista.eos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,730 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from awx.awx in a release after TBD. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,750 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.asa in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,751 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.ios in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,754 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.iosxr in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,759 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.nxos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:28,766 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.aws in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,780 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.azure in a release after TBD. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,792 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.acme_account_facts' module has 
+been renamed to 'community.crypto.acme_account_info'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,793 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate' module has 
+been renamed to 'community.crypto.x509_certificate'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,793 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate_info' module 
+has been renamed to 'community.crypto.x509_certificate_info'. This feature will
+ be removed from community.crypto in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,794 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.digitalocean in version 2.0.0. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,800 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,801 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 3.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,806 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: The helm module in community.general has been 
+deprecated. Use community.kubernetes.helm instead. This feature will be removed
+ from community.general in version 3.0.0. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,851 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.network in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,860 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2022-06-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,860 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,920 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from hetzner.hcloud in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,924 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from junipernetworks.junos in a release after 
+2022-06-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,946 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.auth. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,947 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.config. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,947 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,947 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster_template. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,947 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,948 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.floating_ip. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,948 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,948 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,948 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,949 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,949 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,949 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_inspect. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,949 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,950 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keypair. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,950 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,950 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,950 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.endpoint. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,951 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol. This feature will be removed from
+ openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,951 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol_info. This feature will be removed
+ from openstack.cloud in a release after 2021-12-12. Deprecation warnings can 
+be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,951 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,951 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,952 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,952 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,953 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_role. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,953 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.catalog_service. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,953 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_listener. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,954 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.loadbalancer. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,954 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_member. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,954 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.network. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,954 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.networks_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,955 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,955 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.host_aggregate. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,955 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.object. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,956 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_pool. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,956 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,956 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port_info. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,956 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,957 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_access. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,957 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,957 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.quota. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,958 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.recordset. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,958 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.router. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,958 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.routers_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,958 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,959 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group_rule. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,959 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,959 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,959 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_group. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,960 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,960 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_metadata. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,960 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_volume. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,961 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.stack. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,961 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnet. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,961 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnets_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,961 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,962 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.group_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,962 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,962 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.role_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,962 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,963 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume_snapshot. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,963 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.dns_zone. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:28,975 p=30317 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from vyos.vyos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:33,838 p=30317 u=hichem n=ansible |  [ERROR]: User interrupted execution
+
+2020-10-19 13:30:37,022 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2022-06-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,023 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2021-12-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,026 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from ansible.netcommon in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,031 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from arista.eos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,034 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from awx.awx in a release after TBD. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,052 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.asa in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,054 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.ios in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,056 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.iosxr in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,062 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.nxos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:37,069 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.aws in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,082 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.azure in a release after TBD. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,095 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.acme_account_facts' module has 
+been renamed to 'community.crypto.acme_account_info'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,096 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate' module has 
+been renamed to 'community.crypto.x509_certificate'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,096 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate_info' module 
+has been renamed to 'community.crypto.x509_certificate_info'. This feature will
+ be removed from community.crypto in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,097 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.digitalocean in version 2.0.0. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,103 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,104 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 3.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,108 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: The helm module in community.general has been 
+deprecated. Use community.kubernetes.helm instead. This feature will be removed
+ from community.general in version 3.0.0. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,154 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.network in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,163 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2022-06-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,163 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,224 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from hetzner.hcloud in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,228 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from junipernetworks.junos in a release after 
+2022-06-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,250 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.auth. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,250 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.config. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,250 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,251 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster_template. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,251 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,251 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.floating_ip. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,251 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,252 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,252 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,252 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,252 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,253 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_inspect. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,253 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,253 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keypair. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,253 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,254 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,254 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.endpoint. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,254 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol. This feature will be removed from
+ openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,255 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol_info. This feature will be removed
+ from openstack.cloud in a release after 2021-12-12. Deprecation warnings can 
+be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,255 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,255 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,255 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,256 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,256 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_role. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,256 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.catalog_service. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,256 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_listener. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,257 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.loadbalancer. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,257 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_member. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,257 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.network. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,257 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.networks_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,258 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,258 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.host_aggregate. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,258 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.object. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,258 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_pool. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,259 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,259 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port_info. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,259 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,259 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_access. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,260 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,260 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.quota. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,260 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.recordset. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,260 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.router. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,261 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.routers_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,261 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,261 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group_rule. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,261 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,262 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,262 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_group. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,262 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,262 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_metadata. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,263 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_volume. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,263 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.stack. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,263 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnet. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,263 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnets_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,264 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,264 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.group_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,264 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,264 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.role_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,265 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,265 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume_snapshot. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,265 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.dns_zone. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:37,278 p=30321 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from vyos.vyos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-19 13:30:57,593 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from amazon.aws in a release after 2022-06-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,594 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from amazon.aws in a release after 2021-12-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,597 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from ansible.netcommon in a release after 2022-06-01. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,602 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from arista.eos in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,605 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from awx.awx in a release after TBD. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,624 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from cisco.asa in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,626 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from cisco.ios in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,628 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from cisco.iosxr in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,634 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from cisco.nxos in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,641 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.aws in a release after 2021-12-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,655 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.azure in a release after TBD. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,667 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.acme_account_facts' module has been renamed to 'community.crypto.acme_account_info'. This feature will be removed from community.crypto in 
+version 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,668 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate' module has been renamed to 'community.crypto.x509_certificate'. This feature will be removed from community.crypto in 
+version 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,669 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate_info' module has been renamed to 'community.crypto.x509_certificate_info'. This feature will be removed from 
+community.crypto in version 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,670 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.digitalocean in version 2.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,675 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.general in version 2.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,676 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.general in version 3.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,681 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: The helm module in community.general has been deprecated. Use community.kubernetes.helm instead. This feature will be removed from community.general in version 3.0.0.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,727 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.network in version 2.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,736 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.vmware in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,736 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from community.vmware in a release after 2021-12-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,797 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will be removed from hetzner.hcloud in version 2.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,801 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from junipernetworks.junos in a release after 2022-06-01. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,823 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.auth. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,823 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.config. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,824 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.coe_cluster. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,824 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.coe_cluster_template. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,824 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.compute_flavor_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,824 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.floating_ip. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,825 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_group. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,825 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_group_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,825 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.image. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,825 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.image_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation
+ warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,826 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.baremetal_node. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,826 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.baremetal_inspect. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,826 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.baremetal_node_action. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,826 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.keypair. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,827 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_domain. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,827 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_domain_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,827 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.endpoint. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,827 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.keystone_federation_protocol. This feature will be removed from openstack.cloud in a release after 
+2021-12-12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,828 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.keystone_federation_protocol_info. This feature will be removed from openstack.cloud in a release after 
+2021-12-12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,828 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.federation_idp. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,828 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.federation_idp_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,828 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.federation_mapping. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,829 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.federation_mapping_info. This feature will be removed from openstack.cloud in a release after 
+2021-12-12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,829 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_role. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,829 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.catalog_service. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,829 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.lb_listener. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,830 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.loadbalancer. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,830 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.lb_member. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,830 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.network. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,831 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.networks_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,831 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.compute_flavor. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,831 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.host_aggregate. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,832 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.object. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,832 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.lb_pool. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,832 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.port. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,832 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.port_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,833 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.project. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,833 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.project_access. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,833 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.project_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,834 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.quota. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,834 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.recordset. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,834 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.router. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,834 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.routers_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,835 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.security_group. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,835 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.security_group_rule. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,835 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,835 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server_action. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,836 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server_group. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,836 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,836 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server_metadata. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,836 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.server_volume. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,837 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.stack. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,837 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.subnet. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,837 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.subnets_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,837 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_user. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,838 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.group_assignment. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,838 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.identity_user_info. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,838 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.role_assignment. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,838 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.volume. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,839 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.volume_snapshot. This feature will be removed from openstack.cloud in a release after 2021-12-12. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,839 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use openstack.cloud.dns_zone. This feature will be removed from openstack.cloud in a release after 2021-12-12. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-19 13:30:57,851 p=30334 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This feature will be removed from vyos.vyos in a release after 2022-06-01. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2020-10-21 16:51:49,468 p=13703 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-21 16:51:49,652 p=13703 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-21 16:51:53,894 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:53,902 p=13703 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-21 16:51:54,228 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:54,233 p=13703 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-21 16:51:54,449 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:54,454 p=13703 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-21 16:51:54,672 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:54,677 p=13703 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-21 16:51:55,536 p=13703 u=hichem n=ansible | changed: [controller]
+2020-10-21 16:51:55,540 p=13703 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-21 16:51:55,903 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:55,907 p=13703 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-21 16:51:56,128 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:56,132 p=13703 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-21 16:51:56,670 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:56,686 p=13703 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-21 16:51:57,332 p=13703 u=hichem n=ansible | ok: [controller]
+2020-10-21 16:51:57,341 p=13703 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-21 16:51:57,341 p=13703 u=hichem n=ansible | controller                 : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-21 16:55:19,998 p=15978 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-21 16:55:20,130 p=15978 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-21 16:55:21,353 p=15978 u=hichem n=ansible | ok: [centos1]
+2020-10-21 16:55:21,361 p=15978 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-21 16:55:21,711 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:21,715 p=15978 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-21 16:55:21,929 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:21,933 p=15978 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-21 16:55:22,153 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:22,159 p=15978 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-21 16:55:22,885 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:22,890 p=15978 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-21 16:55:23,250 p=15978 u=hichem n=ansible | ok: [centos1]
+2020-10-21 16:55:23,257 p=15978 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-21 16:55:23,512 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:23,517 p=15978 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-21 16:55:24,044 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:24,064 p=15978 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-21 16:55:24,755 p=15978 u=hichem n=ansible | changed: [centos1]
+2020-10-21 16:55:24,765 p=15978 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-21 16:55:24,765 p=15978 u=hichem n=ansible | centos1                    : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-21 16:57:58,464 p=19898 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-21 16:57:58,641 p=19898 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-21 16:58:01,628 p=19898 u=hichem n=ansible | ok: [ubuntu]
+2020-10-21 16:58:01,638 p=19898 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-21 16:58:01,925 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:01,931 p=19898 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-21 16:58:02,128 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:02,133 p=19898 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-21 16:58:02,328 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:02,333 p=19898 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-21 16:58:02,896 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:02,901 p=19898 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-21 16:58:03,256 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:03,264 p=19898 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-21 16:58:03,515 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:03,521 p=19898 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-21 16:58:04,101 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:04,107 p=19898 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-21 16:58:04,695 p=19898 u=hichem n=ansible | changed: [ubuntu]
+2020-10-21 16:58:04,706 p=19898 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-21 16:58:04,706 p=19898 u=hichem n=ansible | ubuntu                     : ok=9    changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 09:57:22,170 p=25740 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 09:57:22,283 p=25740 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 09:57:23,356 p=25740 u=hichem n=ansible | ok: [controller]
+2020-10-22 09:57:23,364 p=25740 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 09:57:23,679 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:23,683 p=25740 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 09:57:23,894 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:23,899 p=25740 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 09:57:24,105 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:24,113 p=25740 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 09:57:24,801 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:24,805 p=25740 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 09:57:25,119 p=25740 u=hichem n=ansible | ok: [controller]
+2020-10-22 09:57:25,123 p=25740 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 09:57:25,335 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:25,339 p=25740 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 09:57:25,780 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:25,792 p=25740 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 09:57:26,389 p=25740 u=hichem n=ansible | changed: [controller]
+2020-10-22 09:57:26,398 p=25740 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 09:57:26,398 p=25740 u=hichem n=ansible | controller                 : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 09:59:40,563 p=27702 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 09:59:40,572 p=27702 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 09:59:41,530 p=27702 u=hichem n=ansible | ok: [centos1]
+2020-10-22 09:59:41,538 p=27702 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 09:59:41,852 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:41,857 p=27702 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 09:59:42,067 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:42,072 p=27702 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 09:59:42,278 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:42,283 p=27702 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 09:59:42,817 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:42,822 p=27702 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 09:59:43,142 p=27702 u=hichem n=ansible | ok: [centos1]
+2020-10-22 09:59:43,146 p=27702 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 09:59:43,358 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:43,363 p=27702 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 09:59:43,801 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:43,806 p=27702 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 09:59:44,403 p=27702 u=hichem n=ansible | changed: [centos1]
+2020-10-22 09:59:44,411 p=27702 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 09:59:44,411 p=27702 u=hichem n=ansible | centos1                    : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 10:02:18,316 p=387 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 10:02:18,325 p=387 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 10:02:20,857 p=387 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 10:02:20,866 p=387 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 10:02:21,140 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:21,150 p=387 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 10:02:21,337 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:21,342 p=387 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 10:02:21,531 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:21,537 p=387 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 10:02:22,076 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:22,081 p=387 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 10:02:22,395 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:22,400 p=387 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 10:02:22,601 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:22,607 p=387 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 10:02:23,170 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:23,176 p=387 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 10:02:23,748 p=387 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 10:02:23,759 p=387 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 10:02:23,759 p=387 u=hichem n=ansible | ubuntu                     : ok=9    changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 13:42:24,411 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2022-06-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,444 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from amazon.aws in a release after 2021-12-01. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,448 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from ansible.netcommon in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,454 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from arista.eos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,486 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from awx.awx in a release after TBD. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,734 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.asa in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,737 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.ios in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,741 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.iosxr in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,773 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from cisco.nxos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 13:42:24,815 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.aws in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,840 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.azure in a release after TBD. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,891 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.acme_account_facts' module has 
+been renamed to 'community.crypto.acme_account_info'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,893 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate' module has 
+been renamed to 'community.crypto.x509_certificate'. This feature will be 
+removed from community.crypto in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,893 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: The 'community.crypto.openssl_certificate_info' module 
+has been renamed to 'community.crypto.x509_certificate_info'. This feature will
+ be removed from community.crypto in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,895 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.digitalocean in version 2.0.0. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,927 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 3.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,934 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.general in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:24,943 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: The helm module in community.general has been 
+deprecated. Use community.kubernetes.helm instead. This feature will be removed
+ from community.general in version 3.0.0. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,173 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.network in version 2.0.0. Deprecation warnings can be
+ disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,182 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2022-06-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,183 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from community.vmware in a release after 2021-12-01. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,453 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: see plugin documentation for details. This feature will 
+be removed from hetzner.hcloud in version 2.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,463 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from junipernetworks.junos in a release after 
+2022-06-01. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,689 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.auth. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,689 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.config. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,689 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,689 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.coe_cluster_template. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,690 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,690 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.floating_ip. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,690 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,690 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_group_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,691 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,691 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.image_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,691 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,691 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_inspect. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,692 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.baremetal_node_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,692 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keypair. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,692 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,692 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_domain_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,693 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.endpoint. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,693 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol. This feature will be removed from
+ openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,693 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.keystone_federation_protocol_info. This feature will be removed
+ from openstack.cloud in a release after 2021-12-12. Deprecation warnings can 
+be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,693 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,694 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_idp_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,694 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,694 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.federation_mapping_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,694 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_role. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,695 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.catalog_service. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,695 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_listener. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,695 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.loadbalancer. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,695 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_member. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,696 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.network. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,696 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.networks_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,696 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.compute_flavor. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,696 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.host_aggregate. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,697 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.object. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,697 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.lb_pool. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,697 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,698 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.port_info. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,698 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project. This feature will be removed from openstack.cloud in a
+ release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,698 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_access. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,698 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.project_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,699 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.quota. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,699 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.recordset. This feature will be removed from openstack.cloud in
+ a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,699 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.router. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,699 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.routers_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,700 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,700 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.security_group_rule. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,700 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,700 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_action. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,701 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_group. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,701 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_info. This feature will be removed from openstack.cloud 
+in a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,701 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_metadata. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,701 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.server_volume. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,702 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.stack. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,702 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnet. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,702 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.subnets_info. This feature will be removed from openstack.cloud
+ in a release after 2021-12-12. Deprecation warnings can be disabled by setting
+ deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,702 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,703 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.group_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,703 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.identity_user_info. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,703 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.role_assignment. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,703 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume. This feature will be removed from openstack.cloud in a 
+release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,704 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.volume_snapshot. This feature will be removed from 
+openstack.cloud in a release after 2021-12-12. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,704 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: os_ prefixed module names are deprecated, use 
+openstack.cloud.dns_zone. This feature will be removed from openstack.cloud in 
+a release after 2021-12-12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-10-22 13:42:25,719 p=16893 u=hichem n=ansible | [DEPRECATION WARNING]: See the plugin documentation for more details. This 
+feature will be removed from vyos.vyos in a release after 2022-06-01. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+2020-10-22 14:04:05,920 p=24773 u=hichem n=ansible | ERROR! the field 'hosts' is required but was not set
+2020-10-22 14:04:40,131 p=25277 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 14:04:40,296 p=25277 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 14:04:40,401 p=25277 u=hichem n=ansible | fatal: [win]: FAILED! => {"msg": "winrm or requests is not installed: No module named 'winrm'"}
+2020-10-22 14:04:40,402 p=25277 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 14:04:40,402 p=25277 u=hichem n=ansible | win                        : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-10-22 14:06:32,038 p=25819 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 14:06:32,208 p=25819 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 14:06:32,485 p=25819 u=hichem n=ansible | fatal: [win]: UNREACHABLE! => {"changed": false, "msg": "ssl: HTTPSConnectionPool(host='127.0.0.1', port=55985): Max retries exceeded with url: /wsman (Caused by SSLError(SSLError(\"bad handshake: Error([('SSL routines', 'ssl3_get_record', 'wrong version number')])\")))", "unreachable": true}
+2020-10-22 14:06:32,486 p=25819 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 14:06:32,486 p=25819 u=hichem n=ansible | win                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 14:08:53,567 p=26337 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 14:08:53,748 p=26337 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 14:08:53,920 p=26337 u=hichem n=ansible | fatal: [win]: UNREACHABLE! => {"changed": false, "msg": "plaintext: HTTPConnectionPool(host='127.0.0.1', port=5985): Max retries exceeded with url: /wsman (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa229de27d0>: Failed to establish a new connection: [Errno 111] Connection refused'))", "unreachable": true}
+2020-10-22 14:08:53,921 p=26337 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 14:08:53,921 p=26337 u=hichem n=ansible | win                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 14:11:59,570 p=27061 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 14:11:59,751 p=27061 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 14:12:03,328 p=27061 u=hichem n=ansible | ok: [win]
+2020-10-22 14:12:03,335 p=27061 u=hichem n=ansible | TASK [create ansible user] *****************************************************
+2020-10-22 14:12:09,328 p=27061 u=hichem n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: at <ScriptBlock>, <No file>: line 203
+2020-10-22 14:12:09,329 p=27061 u=hichem n=ansible | fatal: [win]: FAILED! => {"changed": false, "msg": "Unhandled exception while executing module: Exception calling \"SetInfo\" with \"0\" argument(s): \"The password does not meet the password policy requirements. Check the minimum password length, password complexity and password history requirements.\r\n\""}
+2020-10-22 14:12:09,330 p=27061 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 14:12:09,330 p=27061 u=hichem n=ansible | win                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-10-22 14:13:02,673 p=27574 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 14:13:02,694 p=27574 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 14:13:05,486 p=27574 u=hichem n=ansible | ok: [win]
+2020-10-22 14:13:05,492 p=27574 u=hichem n=ansible | TASK [create ansible user] *****************************************************
+2020-10-22 14:13:11,555 p=27574 u=hichem n=ansible | changed: [win]
+2020-10-22 14:13:11,562 p=27574 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 14:13:11,562 p=27574 u=hichem n=ansible | win                        : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 15:13:22,782 p=4842 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 15:13:22,949 p=4842 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 15:13:26,742 p=4842 u=hichem n=ansible | ok: [controller.example.com]
+2020-10-22 15:13:26,754 p=4842 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 15:13:27,334 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:27,340 p=4842 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 15:13:27,763 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:27,769 p=4842 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 15:13:28,091 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:28,098 p=4842 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 15:13:29,072 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:29,078 p=4842 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 15:13:29,514 p=4842 u=hichem n=ansible | ok: [controller.example.com]
+2020-10-22 15:13:29,520 p=4842 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 15:13:29,843 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:29,850 p=4842 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 15:13:30,607 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:30,696 p=4842 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 15:13:31,871 p=4842 u=hichem n=ansible | changed: [controller.example.com]
+2020-10-22 15:13:31,893 p=4842 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 15:13:31,893 p=4842 u=hichem n=ansible | controller.example.com     : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 15:14:19,997 p=6669 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 15:14:20,006 p=6669 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 15:14:23,772 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:23,780 p=6669 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 15:14:24,083 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:24,088 p=6669 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 15:14:24,298 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:24,303 p=6669 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 15:14:24,512 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:24,517 p=6669 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 15:14:25,097 p=6669 u=hichem n=ansible | changed: [centos1]
+2020-10-22 15:14:25,106 p=6669 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 15:14:25,446 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:25,451 p=6669 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 15:14:25,661 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:25,666 p=6669 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 15:14:26,133 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:26,137 p=6669 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 15:14:26,775 p=6669 u=hichem n=ansible | ok: [centos1]
+2020-10-22 15:14:26,783 p=6669 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 15:14:26,784 p=6669 u=hichem n=ansible | centos1                    : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 15:15:15,229 p=9074 u=hichem n=ansible | PLAY [Ansible provisioning] ****************************************************
+2020-10-22 15:15:15,238 p=9074 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 15:15:20,408 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:20,418 p=9074 u=hichem n=ansible | TASK [enable empty password] ***************************************************
+2020-10-22 15:15:20,714 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:20,719 p=9074 u=hichem n=ansible | TASK [permit root login] *******************************************************
+2020-10-22 15:15:20,904 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:20,910 p=9074 u=hichem n=ansible | TASK [permit password Authentification] ****************************************
+2020-10-22 15:15:21,100 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:21,105 p=9074 u=hichem n=ansible | TASK [restart sshd service] ****************************************************
+2020-10-22 15:15:21,648 p=9074 u=hichem n=ansible | changed: [ubuntu]
+2020-10-22 15:15:21,653 p=9074 u=hichem n=ansible | TASK [Make sure we have a 'wheel' group] ***************************************
+2020-10-22 15:15:21,959 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:21,964 p=9074 u=hichem n=ansible | TASK [Allow 'wheel' group to have passwordless sudo] ***************************
+2020-10-22 15:15:22,150 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:22,155 p=9074 u=hichem n=ansible | TASK [create ansible user with password='password'] ****************************
+2020-10-22 15:15:22,597 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:22,603 p=9074 u=hichem n=ansible | TASK [set ansible user with passwordless sudo] *********************************
+2020-10-22 15:15:23,220 p=9074 u=hichem n=ansible | ok: [ubuntu]
+2020-10-22 15:15:23,230 p=9074 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 15:15:23,230 p=9074 u=hichem n=ansible | ubuntu                     : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-22 15:17:08,355 p=13719 u=hichem n=ansible | PLAY [prepare ansible environement] ********************************************
+2020-10-22 15:17:08,468 p=13719 u=hichem n=ansible | TASK [Gathering Facts] *********************************************************
+2020-10-22 15:17:12,892 p=13719 u=hichem n=ansible | ok: [win]
+2020-10-22 15:17:12,897 p=13719 u=hichem n=ansible | TASK [create ansible user] *****************************************************
+2020-10-22 15:17:19,371 p=13719 u=hichem n=ansible | ok: [win]
+2020-10-22 15:17:19,378 p=13719 u=hichem n=ansible | PLAY RECAP *********************************************************************
+2020-10-22 15:17:19,378 p=13719 u=hichem n=ansible | win                        : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

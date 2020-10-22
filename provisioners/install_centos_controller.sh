@@ -10,9 +10,12 @@ sudo yum  update -y
 
 pip install --upgrade pip
 sudo yum install -y ansible
+
+#set ansible to use python3
+sudo pip3 install ansible
 # for windows hosts we need winrm python module
 sudo pip install pywinrm
-
+sudo pip3 install pywinrm
 # install foreman
 
 #sudo yum -y install https://yum.puppet.com/puppet6-release-el-7.noarch.rpm
@@ -24,18 +27,19 @@ sudo pip install pywinrm
 
 # install Ansible AWX (Tower Upstream)
 sudo yum install -y python3
-yum install gcc openssl-devel bzip2-devel libffi-devel -y
+sudo yum install gcc openssl-devel bzip2-devel libffi-devel -y
 sudo yum install -y git make yum-utils curl
 sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install -y docker-ce docker-ce-cli containerd.io
-sudo pip install docker
+sudo usermod -aG docker vagrant
+sudo pip3 install docker
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-sudo  pip install docker-compose
+sudo  pip3 install docker-compose
 ansible-galaxy collection install community.general
 curl -sL https://rpm.nodesource.com/setup_15.x | sudo bash - 
 sudo yum install -y nodejs
@@ -43,8 +47,9 @@ sudo yum install -y gcc-c++
 curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo yum install -y yarn
 sudo npm install npm@latest -g
-
-git clone https://github.com/ansible/awx.git
+sudo yum install -y libselinux-python3
+sudo pip install -U requests==2.5.3
+git clone --branch execution-environments https://github.com/ansible/awx.git 
 cd awx/installer/
 ansible-playbook -i inventory install.yml
 

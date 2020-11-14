@@ -4,11 +4,11 @@
 VAGRANTFILE_API_VERSION = "2"
 
 cluster = {
-  "controller.example.com" => { :ip => "192.168.121.10", :cpus => 1, :mem => 2048, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos_controller.sh", :playbook => "provisioners/playbook.yml", :rsync => false  },
-  "centos1" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+  "controller.example.com" => { :ip => "192.168.121.10", :cpus => 1, :mem => 2048, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos_controller.sh", :playbook => "provisioners/playbook.yml", :disk2 => 10240  }
+#  "centos1" => {  :ip => "192.168.121.11", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
 #  "centos2" => {  :ip => "192.168.121.12", :cpus => 1, :mem => 1024, :boxname => "centos/7", :provider => "virtualbox", :script => "provisioners/install_centos.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
-  "ubuntu" => {  :ip => "192.168.121.13", :cpus => 1, :mem => 1024, :boxname => "ubuntu/bionic64", :provider => "virtualbox", :script => "provisioners/install_ubuntu.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
-  "win" => {  :ip => "192.168.121.14", :cpus => 1, :mem => 1024, :boxname => "opentable/win-2012r2-standard-amd64-nocm", :provider => "virtualbox", :script => "provisioners/install_windows.bat", :rsync => false, :forwarded_port_host => "13389", :forwarded_port_guest => "3389", :playbook => "provisioners/playbook_win.yml" }
+#  "ubuntu" => {  :ip => "192.168.121.13", :cpus => 1, :mem => 1024, :boxname => "ubuntu/bionic64", :provider => "virtualbox", :script => "provisioners/install_ubuntu.sh", :playbook => "provisioners/playbook.yml", :rsync => false },
+#  "win" => {  :ip => "192.168.121.14", :cpus => 1, :mem => 1024, :boxname => "opentable/win-2012r2-standard-amd64-nocm", :provider => "virtualbox", :script => "provisioners/install_windows.bat", :rsync => false, :forwarded_port_host => "13389", :forwarded_port_guest => "3389", :playbook => "provisioners/playbook_win.yml" }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -25,14 +25,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       cfg.vm.hostname = hostname
       cfg.hostsupdater.aliases = [hostname]
       cfg.vm.box = "#{info[:boxname]}" || 'virtualbox'
+      
       #cfg.hostmanager.aliases = [hostname+ ".example.com",hostname+ ".web.com"]
       cfg.vm.provider :"#{info[:provider]}" do |prov|
         prov.memory = info[:mem] || '512'
         prov.cpus = info[:cpus] || '1'
+        unless info[:disk2].nil?
+                file_to_disk = './disks/'+hostname+'_second_disk.vdi'
+                prov.customize  ['createhd', '--filename', file_to_disk, '--size', info[:disk2]]
+                prov.customize  ['storageattach', :id, '--storagectl', 'IDE', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+                
+        end # add second disk
         prov.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         prov.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
         prov.customize ["modifyvm", :id, "--ioapic", "on"]
+        
+        
       end # end provider
+      
+      
+      
       
       unless info[:ip].nil?
         cfg.vm.network "private_network", ip: "#{info[:ip]}" 

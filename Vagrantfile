@@ -32,7 +32,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.cpus = info[:cpus] || '1'
         unless info[:disk2].nil?
                 file_to_disk = './disks/'+hostname+'_second_disk.vdi'
-                prov.customize  ['createhd', '--filename', file_to_disk, '--size', info[:disk2]]
+                unless File.exist?(file_to_disk)
+                    prov.customize  ['createhd', '--filename', file_to_disk, '--size', info[:disk2]]
+                end
                 prov.customize  ['storageattach', :id, '--storagectl', 'IDE', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
                 
         end # add second disk
